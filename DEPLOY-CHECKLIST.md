@@ -9,10 +9,20 @@
 
 ## Deploy Backend (Do This First!)
 
+**IMPORTANT:** Navigate INTO the server directory first!
+
 ```bash
 cd server
 vercel --prod
 ```
+
+When prompted:
+- "Set up and deploy?" → **Y**
+- "Which scope?" → Select your account
+- "Link to existing project?" → **N** (first time)
+- "What's your project's name?" → **deeevyashakthi-backend**
+- "In which directory is your code located?" → **.** (current directory)
+- "Want to modify settings?" → **N**
 
 **After deployment:**
 1. Copy the backend URL (e.g., `https://your-backend.vercel.app`)
@@ -28,10 +38,20 @@ vercel --prod
 
 ## Deploy Frontend (Do This Second!)
 
+**IMPORTANT:** Navigate INTO the client directory first!
+
 ```bash
-cd ../client
+cd client
 vercel --prod
 ```
+
+When prompted:
+- "Set up and deploy?" → **Y**
+- "Which scope?" → Select your account
+- "Link to existing project?" → **N** (first time)
+- "What's your project's name?" → **deeevyashakthi-frontend**
+- "In which directory is your code located?" → **.** (current directory)
+- "Want to modify settings?" → **N**
 
 **After deployment:**
 1. Copy the frontend URL (e.g., `https://your-frontend.vercel.app`)
