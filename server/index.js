@@ -26,11 +26,15 @@ app.get('/', (req, res) => {
 });
 
 // Sync Database and Start Server
-sequelize.sync({ alter: true }).then(() => {
-    console.log('Database synced successfully with schema updates');
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+if (process.env.NODE_ENV !== 'production') {
+    sequelize.sync({ alter: true }).then(() => {
+        console.log('Database synced successfully with schema updates');
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    }).catch(err => {
+        console.error('Error syncing database:', err);
     });
-}).catch(err => {
-    console.error('Error syncing database:', err);
-});
+}
+
+export default app;
