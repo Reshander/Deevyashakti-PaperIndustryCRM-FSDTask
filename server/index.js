@@ -25,12 +25,27 @@ app.get('/', (req, res) => {
     res.send('Deeevyashakti CRM API is running...');
 });
 
-// Sync Database and Start Server
-sequelize.sync({ alter: true }).then(() => {
-    console.log('Database synced successfully with schema updates');
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+// Database Sync Logic
+const syncDB = async () => {
+    try {
+        await sequelize.sync({ alter: true });
+        console.log('Database synced successfully');
+    } catch (err) {
+        console.error('Error syncing database:', err);
+    }
+};
+
+// Start server for local development only
+if (process.env.NODE_ENV !== 'production') {
+    syncDB().then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
     });
-}).catch(err => {
-    console.error('Error syncing database:', err);
-});
+} else {
+    // For Vercel, we still need to ensure DB is synced
+    // Note: In a real production app, migrations are preferred over sync({alter:true})
+    syncDB();
+}
+
+export default app;
