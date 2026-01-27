@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getQueries, createQuery, respondToQuery } from '../services/api';
 import { toast } from 'react-toastify';
-import { MessageSquare, Send, User, Clock, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, Send, Clock } from 'lucide-react';
 
 const Queries = ({ user }) => {
     console.log('Queries component rendering with user:', user);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getPOs, createPO } from '../services/api';
 import { toast } from 'react-toastify';
-import { Plus, FileText, Calendar, MapPin, Hash, Package, Layers } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const PurchaseOrders = () => {
     const [pos, setPos] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getInvoices, updatePaymentStatus, getSOs, createInvoice } from '../services/api';
 import { toast } from 'react-toastify';
-import { CreditCard, DollarSign, Clock, CheckCircle, Plus, FileText } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const Invoices = ({ user }) => {
     console.log('Invoices component rendering');
@@ -33,6 +33,7 @@ const Invoices = ({ user }) => {
         if (preselectedSoId) {
             handleOpenModal();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [preselectedSoId]);
 
     const fetchData = async () => {

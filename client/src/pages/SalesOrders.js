@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getSOs, createSO, verifySO, getPOs } from '../services/api';
 import { toast } from 'react-toastify';
-import { Plus, CheckCircle2, AlertCircle, ShoppingCart, RefreshCw } from 'lucide-react';
+import { Plus, RefreshCw } from 'lucide-react';
 
 const SalesOrders = ({ user }) => {
     const [sos, setSos] = useState([]);
