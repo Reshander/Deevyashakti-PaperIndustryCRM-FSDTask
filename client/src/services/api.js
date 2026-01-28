@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_API_URL ||
     (window.location.hostname === 'localhost'
         ? 'http://localhost:5000/api'
-        : '/api'); // In Vercel, if backend is on same domain, use relative path
+        : 'deevyashakti-paper-industry-crm-fsd-nine.vercel.app/api'); // In Vercel, if backend is on same domain, use relative path
 
 const api = axios.create({
     baseURL: API_URL,

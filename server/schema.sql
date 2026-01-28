@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS invoices (
     invoice_number VARCHAR(100) NOT NULL UNIQUE,
     invoice_date DATE NOT NULL,
     amount DECIMAL(15,2) NOT NULL,
-    payment_status ENUM('Unpaid', 'Partially Paid', 'Paid') DEFAULT 'Unpaid',
+    payment_status ENUM('Pending', 'Partial', 'Paid', 'Unpaid', 'Partially Paid') DEFAULT 'Pending',
     payment_remarks TEXT,
     due_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

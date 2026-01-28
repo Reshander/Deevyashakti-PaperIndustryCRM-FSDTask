@@ -25,7 +25,7 @@ const Invoice = sequelize.define('Invoice', {
         defaultValue: 'Generated'
     },
     payment_status: {
-        type: DataTypes.ENUM('Pending', 'Partial', 'Paid'),
+        type: DataTypes.ENUM('Pending', 'Partial', 'Paid', 'Unpaid', 'Partially Paid'),
         defaultValue: 'Pending'
     },
     payment_remarks: { type: DataTypes.TEXT },
